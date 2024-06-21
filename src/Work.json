@@ -71,29 +71,6 @@
       "link":"https://wura-events-web.netlify.app/",
       "type":"Projects"
 
-    },
-  
-    {
-      "id": 9,
-      "date":"",
-      "title": "Ola Events",
-      "image": "image.jpg",
-      "description": "This is the fifth object.",
-      "skills": "[]",
-      "type":"Certifications",
-      "link":""
-
-    },
-    {
-      "id": 10,
-      "date":"",
-      "title": "Ola Events",
-      "image": "imageMe.JPG",
-      "description": "This is the fifth object.",
-      "skills": "[]",
-      "type":"Certifications",
-      "link":""
-
     }
   ]
   

@@ -2,6 +2,8 @@ import React, { useRef, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home'
 import Contact from './Component/Contact';
+import HelloAnimation from './Component/Hello';
+
 
 function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -28,10 +30,14 @@ function App() {
           top: `${mousePosition.y}px`,
         }}
       />
-          <Home/>
 
 
       <Routes>
+      <Route path="/" element={<HelloAnimation />} />
+
+      <Route path="/home" element={<Home />} />
+      {/* <Route path="/contact" element={<Contact />} /> */}
+
         
       </Routes>
 
