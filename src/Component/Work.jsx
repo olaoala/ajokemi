@@ -1,44 +1,87 @@
 import React, { useState } from 'react';
 import workdata from '../Work.json';
-import image from '../Assets/image.jpg';
 
 const Work = () => {
     const [selectedWork, setSelectedWork] = useState(workdata[0]);
 
-    return (
-        <div>
-            <div className=' w-24 h-24 ml-24 -mt-8 m-4 bg-amber-400 border-2 rounded-full'>
-            <p className='text-center my-8'>Projects</p>
-            </div>
-            <div className='bg-amber-50 flex flex-wrap justify-between p-32 my-10 py-12'>
-                <div className="ml-40 ">
-                    <img src={image} alt='' className='h-64 w-64 object-cover rounded-xl my-2' />
-                    <h2 className='font-bold text-sm'>{selectedWork.title}</h2>
-                    <p className='text-slate-500 text-xs'>{selectedWork.description}</p>
-                    {selectedWork.link && (
-                        <a
-                            href={selectedWork.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="card-link"
-                        >
-                            <button className="button border border-black rounded-xl p-2 my-2 bg-gray-800 text-slate-200 text-sm">Check it out</button>
-                        </a>
-                    )}
-                </div>
-           
+    const getImage = (imageName) => {
+        try {
+            return require(`../Assets/${imageName}`);
+        } catch (err) {
+            console.error(err);
+            return null;
+        }
+    };
 
-                <div className="mr-40 grid grid-cols-3 gap-3 h-10 mt-24 ">
-                    {workdata.map((obj) => (
-                        <button
-                            key={obj.id}
-                            className={`title ${selectedWork.id === obj.id ? 'selected' : ''} p-2 bg-gray-800 border text-slate-200 text-sm border-black rounded-xl text-center max-h-10`}
-                            onClick={() => setSelectedWork(obj)}
-                        >
-                            {obj.title}
-                        </button>
-                    ))}
-                </div>
+    const groupedWorkData = workdata.reduce((acc, item) => {
+        if (!acc[item.type]) {
+            acc[item.type] = [];
+        }
+        acc[item.type].push(item);
+        return acc;
+    }, {});
+
+    return (
+        <div className=' m-4 min-h-screen'>
+            <div className='container mx-auto'>
+                {Object.keys(groupedWorkData).map((type) => (
+                    <div key={type} className="mb-10 ">
+                        <div className='w-28 h-28 ml-16 bg-blue rounded-full flex items-center justify-center '>
+                        <h3 className='text-slate-200 text-center font-bold '>{type}</h3>
+                    </div>
+
+                        <div className={type === "Certifications" ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4" : "m-14 grid grid-cols-1 gap-2"}>
+                            {groupedWorkData[type].map((obj) => (
+                                <div
+                                    key={obj.id}
+                                    className='p-2 flex gap-4 text-slate-200 border-transparent text-sm rounded-xl hover:border hover:bg-hover cursor-pointer'
+                                    onClick={() => setSelectedWork(obj)}
+                                >
+                                    {obj.type === "Projects" ? (
+                                        <>
+                                            <div className='m-4'>
+                                                <img src={getImage(obj.image)} alt={obj.title} className='h-32 w-40 object-cover rounded-xl' />
+                                            </div>
+                                            <div className='m-2 flex-1'>
+                                                <h2 className='font-bold text-sm'>{obj.title}</h2>
+                                                <span className='text-slate-500 text-xs'>{obj.description}</span>
+                                            </div>
+                                        </>
+                                    ) : obj.type === "Experiences" ? (
+                                        <>
+                                            <div className='m-4'>
+                                                <span>{obj.date}</span>
+                                            </div>
+                                            <div className='m-2 flex-1'>
+                                                <h2 className='font-bold text-sm'>{obj.title}</h2>
+                                                <span className='text-slate-500 text-xs'>{obj.description}</span>
+                                                <ul className='list-none flex gap-4 mt-2'>
+                                                    {obj.skills.map((skill, index) => (
+                                                        <li key={index} className='text-sm p-2 rounded-lg bg-hover hover:bg-blue'>{skill}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        </>
+                                    ) : obj.type === "Certifications" ? (
+                                        <>
+                                        <div className='mx-12 p-2'>
+                                        <div className='m-2'>
+                                                <img src={getImage(obj.image)} alt={obj.title} className='h-32 w-40 object-cover rounded-xl' />
+                                            </div>
+                                            <div className='m-2 flex-1'>
+                                                <h2 className='font-bold text-sm'>{obj.title}</h2>
+                                                <span className='text-slate-500 text-xs'>{obj.description}</span>
+                                            </div>
+                                        </div>
+                                          
+                                        </>
+                                    ) : null}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+
             </div>
         </div>
     );

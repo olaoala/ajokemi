@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import image from '../Assets/image.jpg'
 
 const ContactForm = () => {
@@ -8,7 +8,7 @@ const ContactForm = () => {
         message: '',
         services: ''
     });
-
+    
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -22,12 +22,28 @@ const ContactForm = () => {
         // Handle form submission (e.g., send data to an API or email service)
         console.log('Form submitted:', formData);
     };
+    const contactDivRef = useRef(null);
+
+    const handleScroll = () => {
+      if (contactDivRef.current) {
+        const scrollPosition = window.scrollY;
+        const maxScrollPosition = window.innerHeight;
+        let newPosition = scrollPosition > maxScrollPosition ? maxScrollPosition : scrollPosition;
+        contactDivRef.current.style.transform = `translateX(${newPosition}px)`;
+      }
+    };
+  
+    useEffect(() => {
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+  
 
     return (
-        <div>
-            <div className=' w-24 h-24 ml-24 -mt-8 m-4 bg-amber-400 border-2 rounded-full'>
+        <div className='bg-slate-700'>
+            {/* <div className=' w-24 h-24 ml-24 -mt-12  m-4 bg-amber-400 border-2 rounded-full'>
                 <p className='text-center p-2 my-4'>Contact me</p>
-            </div>
+            </div> */}
             <div className='flex justify-between p-12 px-52'>
                 <div className="max-w-md p-6 w-3/5">
                     <h2 className="text-4xl font-bold mb-16">Let's work <br /> together!</h2>
@@ -109,11 +125,11 @@ const ContactForm = () => {
                         <p className='text-sm'>Location: Yaba Lagos</p>
                     </div>
                     <div>
-                        <a className='text-xs'>Socials</a> <br />
-                        <a className='text-sm'>Github</a> <br />
-                        <a className='text-sm'>LinkedIn</a> <br />
-                        <a className='text-sm'>Instagram</a> <br />
-                        <a className='text-sm'>Twitter</a>
+                        <p className='text-xs'>Socials</p> <br />
+                        <a href='#github' className='text-sm'>Github</a> <br />
+                        <a href='#linkedin' className='text-sm'>LinkedIn</a> <br />
+                        <a href='#instagram' className='text-sm'>Instagram</a> <br />
+                        <a href='#twitter'className='text-sm'>Twitter</a>
 
                     </div>
 

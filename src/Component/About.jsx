@@ -2,16 +2,25 @@ import React, { useState } from 'react';
 
 const Work = () => {
     return (
-        <div>
-            <div className='flex  justify-between p-7 my-10 py-12'>
-                <div className="ml-32 w-2/4 ">
-                    <p className='text-lg font-bold'>Helping brands to standout in the digital era. Together we will set the new status quo. No nonsense, always on the cutting edge.</p>
-                </div>
-           
-
-                <div className="ml-24 w-2/4 h-10  ">
-                   <p className='text-sm'>The combination of my passion for design, code <br />& interaction positions me in a unique place in the <br />web design world.</p>
-                </div>
+        <div className=''>
+             {/* <div className=' w-24 h-24 ml-24 mt-11 m-4 bg-amber-400 border-2 rounded-full'>
+                <p className='text-center p-2 my-4'>About</p>
+            </div> */}
+            <div className='p-7 m-12 '>
+             <p className='m-5'> A Front-End Developer, highly effective in designing and implementing user interfaces for software
+                applications. With my expertise in front-end technologies and my strong ability to collaborate with
+                cross- functional teams, ability to deliver exceptional software solutions that enhance the overall user
+                experience. Leveraging my HTML, CSS, and ReactJs knowledge, I create seamless and intuitive user
+                experiences across various devices and platforms.</p>
+                <p className='m-5'> A Front-End Developer, highly effective in designing and implementing user interfaces for software
+                applications. With my expertise in front-end technologies and my strong ability to collaborate with
+                cross- functional teams, ability to deliver exceptional software solutions that enhance the overall user
+                experience.</p>
+                <p className='m-5'> A Front-End Developer, highly effective in designing and implementing user interfaces for software
+                applications. With my expertise in front-end technologies and my strong ability to collaborate with
+                cross- functional teams, ability to deliver exceptional software solutions that enhance the overall user
+                experience. Leveraging my HTML, CSS, and ReactJs knowledge, I create seamless and intuitive user
+                experiences across various devices and platforms.</p>
             </div>
         </div>
     );

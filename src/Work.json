@@ -1,39 +1,99 @@
 [
+   
+    {
+      "id": 3,
+      "date":"July, 2020-Sept, 2023",
+      "title": "Developer Analyst",
+      "description": "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track.",
+      "skills": ["HTML", "CSS", "JavaScript", "SQL"],
+      "type":"Experiences"
+
+    },
     {
       "id": 1,
-      "title": "Airbeenbee",
-      "description": "This is the first object.",
-      "image": "../Assets/image.jpg",
-      "link":"https://airbeenbee.netlify.app/"
-      
+      "date":"July, 2020-Sept, 2023",
+      "title": "Junior Frontend Developer",
+      "description": "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track.",
+      "skills": ["HTML", "CSS", "JavaScript", "SQL"],
+      "type":"Experiences"
+
     },
     {
       "id": 2,
+      "date":"July, 2020-Sept, 2023",
+      "title": "Frontend Developer",
+      "description": "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track.",
+      "skills": ["HTML", "CSS", "JavaScript", "SQL"],
+      "type":"Experiences"
+
+    }, 
+    {
+      "id": 5,
       "title": "RemindMe",
       "description": "This is the second object.",
-      "image": "images/image2.jpg",
-      "link":"https://remindmetest.netlify.app/"
-    },
-    {
-      "id": 3,
-      "title": "Stall57",
-      "description": "This is the third object.",
-      "image": "images/image3.jpg",
-      "link":"https://stall57.netlify.app/"
+      "image": "image.jpg",
+      "link":"https://remindmetest.netlify.app/",
+      "type":"Projects"
+
     },
     {
       "id": 4,
-      "title": "Calorine",
-      "description": "This is the fourth object.",
-      "image": "images/image4.jpg",
-      "link":""
+      "title": "Airbeenbee",
+      "description": "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
+      "image": "image.jpg",
+      "link":"https://airbeenbee.netlify.app/",
+      "type":"Projects"
+      
     },
     {
-      "id": 5,
+      "id": 6,
+      "title": "Stall57",
+      "description": "This is the third object.",
+      "image": "image.jpg",
+      "link":"https://stall57.netlify.app/",
+      "type":"Projects"
+
+    },
+    {
+      "id": 7,
+      "title": "Calorine",
+      "description": "This is the fourth object.",
+      "image": "imageMe.JPG",
+      "link":"",
+      "type":"Projects"
+
+    },
+    {
+      "id": 8,
       "title": "Ola Events",
       "description": "This is the fifth object.",
-      "image": "images/image5.jpg",
-      "link":"https://wura-events-web.netlify.app/"
+      "image": "image.jpg",
+      "link":"https://wura-events-web.netlify.app/",
+      "type":"Projects"
+
+    },
+  
+    {
+      "id": 9,
+      "date":"",
+      "title": "Ola Events",
+      "image": "image.jpg",
+      "description": "This is the fifth object.",
+      "skills": "[]",
+      "type":"Certifications",
+      "link":""
+
+    },
+    {
+      "id": 10,
+      "date":"",
+      "title": "Ola Events",
+      "image": "imageMe.JPG",
+      "description": "This is the fifth object.",
+      "skills": "[]",
+      "type":"Certifications",
+      "link":""
+
     }
   ]
   
