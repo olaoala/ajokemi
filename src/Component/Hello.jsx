@@ -1,7 +1,7 @@
-// src/components/Hello.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import './css/Hello.css'
 
 const languages = ["Hello.", "Hola.", "Bonjour.", "Hallo.", "Ciao."];
 const welcomeMessage = "Hi, I am Wuraola, welcome to my Workspace";
@@ -24,11 +24,10 @@ const Hello = () => {
                 }
                 return prev + 1;
             });
-        }, 500); // Change language every 1.5 seconds
+        }, 500);
 
         return () => clearInterval(languageInterval);
     }, []);
-  
 
     useEffect(() => {
         if (showTyping) {
@@ -51,7 +50,7 @@ const Hello = () => {
             setIsFadingOut(true);
             setTimeout(() => {
                 navigate('/home');
-            }, 1000); // Match the duration of the fade-out animation
+            }, 1000);
         }
     };
 
@@ -67,14 +66,13 @@ const Hello = () => {
     return (
         <motion.div
             ref={containerRef}
-            className="min-h-screen flex flex-col items-center justify-center bg-blue overflow-hidden"
+            className="min-h-screen flex flex-col items-center justify-center hellobg overflow-hidden"
             initial={{ opacity: 1 }}
         >
             <AnimatePresence>
                 {!showTyping && (
                     <motion.div
                         key={currentLanguage}
-                       
                         className="absolute text-white text-lg font-bold"
                     >
                         {languages[currentLanguage]}

@@ -6,22 +6,22 @@ import HelloAnimation from './Component/Hello';
 
 
 function App() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    const handleMouseMove = (event) => {
-      setMousePosition({ x: event.clientX, y: event.clientY });
-    };
+  // useEffect(() => {
+  //   const handleMouseMove = (event) => {
+  //     setMousePosition({ x: event.clientX, y: event.clientY });
+  //   };
 
-    window.addEventListener('mousemove', handleMouseMove);
+  //   window.addEventListener('mousemove', handleMouseMove);
 
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('mousemove', handleMouseMove);
+  //   };
+  // }, []);
   return (
     <Router>
-         <div
+         {/* <div
         className=" fixed  rounded-full pointer-events-none transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-br to-[#21254a9a] from-[#172550]  blur-3xl shadow-custom"
         style={{
           width: '500px',
@@ -29,7 +29,7 @@ function App() {
           left: `${mousePosition.x}px`,
           top: `${mousePosition.y}px`,
         }}
-      />
+      /> */}
 
 
       <Routes>

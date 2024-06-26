@@ -10,39 +10,45 @@ import { FaGithub } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
+import Landing from '../Component/Landing';
+import Card from '../Common/Cards';
 
 const Home = () => {
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({ target: containerRef });
     const [isScrolledPastImage, setIsScrolledPastImage] = useState(false);
-
-    // Transformations for initial content
-    const xTransform = useTransform(scrollYProgress, [0, 0.5], ["0%", "-50%"]);
-    const xTextTransform = useTransform(scrollYProgress, [0, 0.5], ["0%", "-10%"]);
-    const yTransform = useTransform(scrollYProgress, [0, 0.5], ["0%", "-70%"]);
-
-    // Transformations for side content
-    const sideContentX = useTransform(scrollYProgress, [0.5, 1], ["100%", "0%"]);
-
-    // Check if scrolled past a certain point
-    useEffect(() => {
-        const unsubscribe = scrollYProgress.on("change", (progress) => {
-            setIsScrolledPastImage(progress > .9);
-        });
-        return () => unsubscribe();
-    }, [scrollYProgress]);
+    const aboutData = {
+        list: [
+          'Developer based in NYC',
+          'Love to travel and explore new cuisines',
+          'Passionate about open-source',
+        ],
+      };
+      
+      const spotifyData = {
+        topSongs: ['Song 1', 'Song 2', 'Song 3'],
+        topGenres: ['Pop', 'Rock', 'Jazz'],
+        topArtists: ['Artist 1', 'Artist 2', 'Artist 3'],
+      };
 
    
     return (
         <div className=' font-playwrite text-white' >
       
             <Navbar scrolledPastImage={isScrolledPastImage} />
+            <Landing/>
+            <About />
+            <Work/>
+
         
-            <div className='container pt-28 ' ref={containerRef} style={{ height: '115vh' }}>
+            {/* <div className='container bg-white pt-28 ' ref={containerRef} style={{ height: '115vh' }}>
                 <div className=' grid md:flex ' >
                     <div className='' style={{ flex: '1 0 30%', overflowY: 'auto' }}>
                         <div className='container  py-2'>
                             <div className='right md:fixed'>
+                                <section style={{backgroundImage: 'URL(../../Assets/image.png)'}}>
+
+                                </section>
                                 <div className=' justify-around m-5' 
                                      transition={{ duration: 2, delay: 0.2 }}
                                                                     style={{ display : 'grid'}}>
@@ -85,13 +91,12 @@ const Home = () => {
                         style={{ flex: '1 0 60%', position: 'relative'}}
                         className="side-content"
                     >
-                        <About />
                         <Work />
                     </div>
                     
                 </div>
 
-            </div>
+            </div> */}
         </div>
     );
 };

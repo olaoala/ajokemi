@@ -14,10 +14,11 @@ module.exports = {
         // '120': 'repeat(2, minmax(100px, 1fr) 100px)'
       },
       fontFamily: {
-        playwrite: ['Kanit', 'sans-serif'],
+        playwrite: ['Manrope', 'sans-serif'],
       },
       backgroundColor:{
         blue: '#111B37' ,
+        gray: '#ABB2B9',
         hover: ' rgba(255, 255, 255, 0.055)'
       },
       boxShadow: {
