@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import './css/Hello.css'
+import './css/Hello.css';
 
 const languages = ["Hello.", "Hola.", "Bonjour.", "Hallo.", "Ciao."];
 const welcomeMessage = "Hi, I am Wuraola, welcome to my Workspace";
@@ -66,13 +66,13 @@ const Hello = () => {
     return (
         <motion.div
             ref={containerRef}
-            className="min-h-screen flex flex-col items-center justify-center hellobg overflow-hidden"
+            className="min-h-screen flex flex-col items-center justify-center bg-gray hellobg overflow-hidden"
             initial={{ opacity: 1 }}
         >
             <AnimatePresence>
                 {!showTyping && (
                     <motion.div
-                        key={currentLanguage}
+                        key={`language-${currentLanguage}`}
                         className="absolute text-white text-lg font-bold"
                     >
                         {languages[currentLanguage]}
@@ -81,6 +81,7 @@ const Hello = () => {
 
                 {showTyping && (
                     <motion.div
+                        key="typing"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1 }}
@@ -92,6 +93,7 @@ const Hello = () => {
 
                 {showTyping && typedText === welcomeMessage && (
                     <motion.div
+                        key="arrow"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 1 }}

@@ -19,6 +19,7 @@ module.exports = {
       backgroundColor:{
         blue: '#111B37' ,
         gray: '#ABB2B9',
+        grayHover: '#EBEDEF',
         hover: ' rgba(255, 255, 255, 0.055)'
       },
       boxShadow: {
