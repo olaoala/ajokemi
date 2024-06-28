@@ -21,7 +21,7 @@ const Home = () => {
     const [isScrolledPastImage, setIsScrolledPastImage] = useState(false);
 
     return (
-        <div className=' font-playwrite text-white' >
+        <div className='font-playwrite text-white' >
       
             <Navbar scrolledPastImage={isScrolledPastImage} />
             <Landing/>

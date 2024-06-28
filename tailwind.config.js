@@ -20,6 +20,7 @@ module.exports = {
         blue: '#111B37' ,
         gray: '#ABB2B9',
         grayHover: '#EBEDEF',
+        graybg:'#C0C0C0',
         hover: ' rgba(255, 255, 255, 0.055)'
       },
       boxShadow: {
