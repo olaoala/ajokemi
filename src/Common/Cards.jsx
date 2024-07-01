@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UniversalCard = ({ type, data, style }) => {
+const UniversalCard = ({ title, type, data, style }) => {
   const renderContent = () => {
     switch (type) {
       case 'list':
@@ -21,7 +21,8 @@ const UniversalCard = ({ type, data, style }) => {
   };
 
   return (
-    <div className=" shadow-md rounded-lg bg-grayHover opacity-55 p-4" style={style}>
+    <div className="shadow-md rounded-lg bg-grayHover opacity-55 p-4" style={style}>
+      {title && <h2 className="text-xl font-bold mb-4">{title}</h2>}
       {renderContent()}
     </div>
   );

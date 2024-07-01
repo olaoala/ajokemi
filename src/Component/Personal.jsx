@@ -26,17 +26,17 @@ const Personals = () => {
   const spotifyData = ['sza', 'brent', 'riri']
 
   return (
-    <div>
-      <div className="flex justify-center gap-4">
-        <UniversalCard type="list" data={listData} style={{ width: '15em',  height:"13em" }} />
-        <UniversalCard type="quote" data={quoteData} style={{ width: '10em' }} />
-        <UniversalCard type="icons" data={iconsData} style={{ width: '15em' }} />
-        <UniversalCard type="business" data={businessData} style={{ width: '20em' }} />
+    <div className=''>
+      <div className="flex text-gray-700 justify-center gap-4">
+        <UniversalCard title="Todo" type="list" data={listData} style={{ width: '15em',  height:"13em" }} />
+        <UniversalCard title="Qoute" type="quote" data={quoteData} style={{ width: '10em' }} />
+        <UniversalCard title="During my free time" type="icons" data={iconsData} style={{ width: '15em' }} />
+        <UniversalCard title="Rich Business Woman" type="business" data={businessData} style={{ width: '20em' }} />
 
       </div>
-      <div className='flex justify-center m-5 gap-4'>
-      <UniversalCard type="images" data={imagesData} style={{ width: '35em', height:"15em" }} />
-      <UniversalCard type="spotify" data={spotifyData} style={{ width: '27em' }} />
+      <div className='flex text-gray-700 justify-center m-5 gap-4'>
+      <UniversalCard title="Recent Photos" type="images" data={imagesData} style={{ width: '35em', height:"15em" }} />
+      <UniversalCard title="Can not shut up about these"type="spotify" data={spotifyData} style={{ width: '27em' }} />
       </div>
 
 

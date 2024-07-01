@@ -1,29 +1,21 @@
 [
    
-    {
-      "id": 3,
-      "date":"July, 2020-Sept, 2023",
-      "title": "Developer Analyst",
-      "description": "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track.",
-      "skills": ["HTML", "CSS", "JavaScript", "SQL"],
-      "type":"Experiences"
-
-    },
+ 
     {
       "id": 1,
-      "date":"July, 2020-Sept, 2023",
+      "date":"2021-2022",
       "title": "Junior Frontend Developer",
-      "description": "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track.",
-      "skills": ["HTML", "CSS", "JavaScript", "SQL"],
+      "description": " I worked closely with the Development team in developing client applications. With my Knowledge of HTML, CSS, and JavaScript and under the supervision of Senior software developers, I participated in writing, debugging, and testing codes",
+      "skills": ["IoLogoHtml5", "IoLogoCss3", "RiJavascriptFill", "PiFileSql", "FaGithub","RxFigmaLogo","VscJson"],
       "type":"Experiences"
 
     },
     {
       "id": 2,
-      "date":"July, 2020-Sept, 2023",
+      "date":"2022-2023",
       "title": "Frontend Developer",
-      "description": "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track.",
-      "skills": ["HTML", "CSS", "JavaScript", "SQL"],
+      "description": "I handled a wide range of responsibilities including designing and implementing user-friendly web interfaces, developing responsive websites using HTML, CSS, and JavaScript, and integrating modern front-end frameworks such as React. I collaborated closely with back-end developers, designers, and product managers to ensure seamless functionality and user experience across various devices and platforms",
+      "skills": ["IoLogoHtml5", "IoLogoCss3", "RiJavascriptFill", "FaReact", "SiAxios","VscJson","TbApi", "FaGithub","SiReactrouter", "SiReacthookform", "SiMongodb"],
       "type":"Experiences"
 
     }, 

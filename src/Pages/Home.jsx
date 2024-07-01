@@ -28,6 +28,10 @@ const Home = () => {
             <About />
             <Work/>
             <Personals/>
+            <div className='grid gap-4 m-10   items-center justify-center'>
+                <p className='text-xl text-gray-600'>Let's work together!</p>
+                <button className='text-white border  rounded-lg bg-blue  p-4 text-sm font-bold'>Schedule a call</button>
+            </div>
         </div>
     );
 };
