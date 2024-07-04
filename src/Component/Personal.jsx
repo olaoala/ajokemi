@@ -8,27 +8,37 @@ import { TbBooks } from "react-icons/tb";
 import { GiPoliceOfficerHead } from "react-icons/gi";
 import { GiAmpleDress } from "react-icons/gi";
 import { LuFlower2 } from "react-icons/lu";
-// import fetch from 'node-fetch';
-
+import { FaReact } from "react-icons/fa";
+import { LiaLaptopCodeSolid } from "react-icons/lia";
+import { GiMountains } from "react-icons/gi";
+import { MdOutlineTravelExplore } from "react-icons/md";
+import { CgGym } from "react-icons/cg";
+import { MdSportsGymnastics } from "react-icons/md";
+import { TbBeach } from "react-icons/tb";
+import { GrYoga } from "react-icons/gr";
+import { GiCaveman } from "react-icons/gi";
+import { FaUserSlash } from "react-icons/fa";
+import { GiEmeraldNecklace } from "react-icons/gi";
+import diamonds from '../Assets/diamonds.png';
+import shampoo from '../Assets/shampoo.png';
+import meal from '../Assets/iftar.png';
+import candle from '../Assets/scented-candle.png'
+import fullDev from '../Assets/woman.png'
 const fetchLikedSongs = async () => {
   try {
     const response = await fetch('http://localhost:3000/likedSongs');
-    console.log(response)
+    console.log(response);
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
     return data;
-    
-
   } catch (error) {
     console.error('Failed to fetch liked songs:', error);
     return [];
   }
 };
-
-
 
 const Personals = () => {
   const [spotifyData, setSpotifyData] = useState([]);
@@ -36,14 +46,28 @@ const Personals = () => {
   useEffect(() => {
     const getSpotifyData = async () => {
       const songs = await fetchLikedSongs();
-      console.log(songs)
+      console.log(songs);
       setSpotifyData(songs);
     };
     getSpotifyData();
   }, []);
 
-  const listData = ['Build more with reactJs', 'Become a fullstack developer', 'Go out more', 'Squat twice my weight', 'Go to the beach', 'Avoid Stress(men)'];
-  const businessData = ['Wuranimi', 'Dore Natural', 'Devour lagos', 'Ile Wura'];
+  const listData = [
+    { text: 'Build more with reactJs', hovertext: 'Building intresting projects with React', Icon1: FaReact, Icon2: LiaLaptopCodeSolid },
+    { text: 'Become a fullstack developer', hovertext: 'Learn backend technologies', Icon1: LiaLaptopCodeSolid, Icon2: IoIosMusicalNotes },
+    { text: 'Travel around Nigeria', hovertext: 'Till i am able to see the world', Icon1: GiMountains, Icon2: MdOutlineTravelExplore },
+    { text: 'Squat twice my weight', hovertext: 'Just for flex', Icon1: CgGym, Icon2: MdSportsGymnastics },
+    { text: 'Have more beach', hovertext: 'Host a yoga retreat someday', Icon1: TbBeach, Icon2: GrYoga },
+    { text: 'Avoid Stress', hovertext: 'why you wanna try me??', Icon1: FaUserSlash, Icon2: GiCaveman }
+  ];
+
+  const businessData = [
+    { text: 'Wuranimi', hovertext: '- Jewelry brand', Icon1: diamonds, Icon2: HiOutlinePaintBrush },
+    { text: 'Dore Natural', hovertext: '- Hair care products',Icon1: shampoo, Icon2: HiOutlinePaintBrush },
+    { text: 'Devour Lagos', hovertext: '- Home made meals', Icon1: meal, Icon2: HiOutlinePaintBrush },
+    { text: 'Ile Wura', hovertext: '- Interior decor', Icon1: candle, Icon2: HiOutlinePaintBrush }
+  ];
+
   const quoteData = ['Risking is better than Regretting.'];
   const imagesData = Array(13).fill('https://via.placeholder.com/150');
   const iconsData = [IoIosMusicalNotes, HiOutlinePaintBrush, PiDogFill, GiTennisRacket, TbBooks, GiPoliceOfficerHead, GiAmpleDress, LuFlower2];
