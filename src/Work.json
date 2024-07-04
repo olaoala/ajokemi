@@ -22,8 +22,9 @@
     {
       "id": 5,
       "title": "RemindMe",
-      "description": "This is the second object.",
-      "image": "image.jpg",
+      "description": "Your ultimate productivity sidekick! 🚀 Easily organize your tasks with smart lists, reminders, and real-time collaboration. Earn fun badges as you complete tasks and hit milestones. Turn your to-dos into ta-das with remindMe! .",
+      "image": "remindme1.png",
+      "imagehover":"remindme2.png",
       "link":"https://remindmetest.netlify.app/",
       "type":"Projects"
 
@@ -31,8 +32,8 @@
     {
       "id": 4,
       "title": "Airbeenbee",
-      "description": "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-      "image": "image.jpg",
+      "description": "Our seamless, responsive design ensures a flawless experience on any device. Explore properties with high-res images and immersive virtual tours, all rendered with smooth animations and quick load times. Discover your dream home with a site built for ultimate user delight! .",
+      "image": "airbeenbee1.png",
       "link":"https://airbeenbee.netlify.app/",
       "type":"Projects"
       

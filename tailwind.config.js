@@ -22,7 +22,8 @@ module.exports = {
         grayHover: '#EBEDEF',
         graybg:'#C0C0C0',
         hover: ' rgba(255, 255, 255, 0.055)',
-        graya:"#F8F9F9"
+        graya:"#F8F9F9",
+        angray:"#ebedef;"
       },
       textColor:{
         blue: '#111B37' ,

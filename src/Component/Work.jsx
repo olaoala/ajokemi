@@ -79,10 +79,10 @@ const Work = () => {
                                                     <h2 className='font-bold text-lg hover:text-gray-950'>{obj.title}</h2>
                                                     <span className='text-gray-500 hover:text-gray-950'>{obj.description}</span>
                                                     {obj.skills && (
-                                                    <div>
+                                                    <div className="flex text-lg gap-3 mt-2">
                                                         {obj.skills.map((skill, index) => {
                                                         const IconComponent = iconComponents[skill];
-                                                        return IconComponent ? <IconComponent key={index} /> : null;
+                                                        return IconComponent ? <IconComponent  key={index} /> : null;
                                                         })}
                                                     </div>
                                                     )}

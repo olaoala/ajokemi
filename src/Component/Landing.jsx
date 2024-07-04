@@ -11,7 +11,7 @@ function Landing() {
       
         <div className="absolute top-2/4 transform -translate-y-2/3 w-full flex justify-between">
           <h2 className="text-4xl text-white p-5">
-            Software <br /> Engineer, Tech babe <br /> extraordinaire.
+            Front-end <br /> Engineer, Tech babe <br /> extraordinaire.
           </h2>
           <div className="flex items-center bg-blue h-16  text-xl p-3 rounded-l-full hover:w-28 group relative">
             <span className="">
