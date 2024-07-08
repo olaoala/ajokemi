@@ -39,16 +39,16 @@ const fetchLikedSongs = async () => {
 };
 
 const Personals = () => {
-  const [spotifyData, setSpotifyData] = useState([]);
+  // const [spotifyData, setSpotifyData] = useState([]);
 
-  useEffect(() => {
-    const getSpotifyData = async () => {
-      const songs = await fetchLikedSongs();
-      console.log(songs);
-      setSpotifyData(songs);
-    };
-    getSpotifyData();
-  }, []);
+  // useEffect(() => {
+  //   const getSpotifyData = async () => {
+  //     const songs = await fetchLikedSongs();
+  //     console.log(songs);
+  //     setSpotifyData(songs);
+  //   };
+  //   getSpotifyData();
+  // }, []);
 
   const listData = [
     { text: 'Build more with reactJs', hovertext: 'Building intresting projects with React', Icon1: FaReact, Icon2: LiaLaptopCodeSolid },

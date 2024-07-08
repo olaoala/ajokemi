@@ -31,6 +31,9 @@ const Hello = () => {
     const navigateToHome = () => {
         navigate('/home');
     };
+    useEffect(() => {
+        navigateToHome();
+      }, [navigateToHome]); 
 
     return (
         <motion.div
