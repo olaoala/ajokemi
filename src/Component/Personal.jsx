@@ -18,12 +18,10 @@ import { TbBeach } from "react-icons/tb";
 import { GrYoga } from "react-icons/gr";
 import { GiCaveman } from "react-icons/gi";
 import { FaUserSlash } from "react-icons/fa";
-import { GiEmeraldNecklace } from "react-icons/gi";
 import diamonds from '../Assets/diamonds.png';
 import shampoo from '../Assets/shampoo.png';
 import meal from '../Assets/iftar.png';
 import candle from '../Assets/scented-candle.png'
-import fullDev from '../Assets/woman.png'
 const fetchLikedSongs = async () => {
   try {
     const response = await fetch('http://localhost:3000/likedSongs');
@@ -69,7 +67,7 @@ const Personals = () => {
   ];
 
   const quoteData = ['Risking is better than Regretting.'];
-  const imagesData = Array(13).fill('https://via.placeholder.com/150');
+  // const imagesData = Array(13).fill('https://via.placeholder.com/150');
   const iconsData = [IoIosMusicalNotes, HiOutlinePaintBrush, PiDogFill, GiTennisRacket, TbBooks, GiPoliceOfficerHead, GiAmpleDress, LuFlower2];
 
   return (

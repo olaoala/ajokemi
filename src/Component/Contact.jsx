@@ -41,9 +41,6 @@ const ContactForm = () => {
 
     return (
         <div className='bg-slate-700'>
-            {/* <div className=' w-24 h-24 ml-24 -mt-12  m-4 bg-amber-400 border-2 rounded-full'>
-                <p className='text-center p-2 my-4'>Contact me</p>
-            </div> */}
             <div className='flex justify-between p-12 px-52'>
                 <div className="max-w-md p-6 w-3/5">
                     <h2 className="text-4xl font-bold mb-16">Let's work <br /> together!</h2>

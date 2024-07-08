@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Work = () => {
     return (
         <div className=' bg-white px-72 py-12'>
-             {/* <div className=' w-24 h-24 ml-24 mt-11 m-4 bg-amber-400 border-2 rounded-full'>
-                <p className='text-center p-2 my-4'>About</p>
-            </div> */}
             <div className='text-gray-500'>
              <p className='font-bold text-3xl'>A front-end engineer who transforms her caffeine addiction into stunning user-friendly websites and applications.  </p>
                 
