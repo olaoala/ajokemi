@@ -9,8 +9,8 @@ const UniversalCard = ({ title, type, data, style }) => {
             {data.map((item, index) => (
               <li className='text-gray text-xs m-1 flex   relative group  ' key={index}>
                 <item.Icon1 className="text-xs text-blue m-1" />
-                <span className="flex-grow pl-1">{item.text}</span>
-                <item.Icon2 className="text-xs text-blue" />
+                <span className=" pl-1">{item.text}</span>
+                {/* <item.Icon2 className="text-xs text-blue" /> */}
                 {/* <span className="absolute right-5 -top-5  bg-gray text-gray-700 text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   {item.hovertext}
                 </span> */}

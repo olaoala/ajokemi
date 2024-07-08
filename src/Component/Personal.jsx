@@ -58,7 +58,7 @@ const Personals = () => {
     { text: 'Travel around Nigeria', hovertext: 'Till i am able to see the world', Icon1: GiMountains, Icon2: MdOutlineTravelExplore },
     { text: 'Squat twice my weight', hovertext: 'Just for flex', Icon1: CgGym, Icon2: MdSportsGymnastics },
     { text: 'Have more beach', hovertext: 'Host a yoga retreat someday', Icon1: TbBeach, Icon2: GrYoga },
-    { text: 'Avoid Stress', hovertext: 'why you wanna try me??', Icon1: FaUserSlash, Icon2: GiCaveman }
+    { text: 'Msc AI and Robotics', hovertext: 'It is more than curiousity', Icon1: FaUserSlash, Icon2: GiCaveman }
   ];
 
   const businessData = [
@@ -80,10 +80,10 @@ const Personals = () => {
         <UniversalCard title="Hobbies" type="icons" data={iconsData} style={{ width: '15em' }} />
         <UniversalCard title="Rich Business Woman" type="business" data={businessData} style={{ width: '20em' }} />
       </div>
-      <div className='flex text-gray-700 justify-center m-5 gap-4'>
+      {/* <div className='flex text-gray-700 justify-center m-5 gap-4'>
         <UniversalCard title="Recent Photos" type="images" data={imagesData} style={{ width: '35em', height: "15em" }} />
         <UniversalCard title="Can not shut up about these" type="spotify" data={spotifyData} style={{ width: '27em' }} />
-      </div>
+      </div> */}
     </div>
   );
 };

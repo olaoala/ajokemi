@@ -7,11 +7,11 @@ const MyNavbar = ({ scrolledPastImage }) => {
       <nav>
         <a href="/">ajokemi</a>
       </nav>
-      <nav className=' flex gap-3'>
+      {/* <nav className=' flex gap-3'>
       <a href="/">Work</a>
       <a href="/">Contact</a>
 
-      </nav>
+      </nav> */}
       </div>
     </div>
   );
