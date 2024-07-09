@@ -41,7 +41,7 @@ const Work = () => {
     }, {});
 
     return (
-        <div className='px-72 py-5  text-gray-600 min-h-screen'>
+        <div className='sm:px-28 md:px-72 py-5  text-gray-600 min-h-screen'>
             <div className='container  '>
                 {Object.keys(groupedWorkData).map((type) => (
                     <div key={type} className="mb-8 p-1 shadow-md border border-blue-950 rounded-xl">
@@ -56,7 +56,7 @@ const Work = () => {
                                 groupedWorkData[type].map((obj) => (
                                     <div
                                         key={obj.id}
-                                        className='p-6 flex gap-4 bg-gray-100 hover:bg-grayHover hover:rounded-lg'
+                                        className='p-6 flex  gap-4 bg-gray-100 hover:bg-grayHover hover:rounded-lg'
                                     >
                                         {obj.type === "Experiences" ? (
                                             <>
@@ -67,7 +67,7 @@ const Work = () => {
                                                     <h2 className='font-bold text-lg hover:text-gray-950'>{obj.title}</h2>
                                                     <span className='text-gray-500 hover:text-gray-950'>{obj.description}</span>
                                                     {obj.skills && (
-                                                        <div className="flex text-lg gap-3 mt-2">
+                                                        <div className="flex text-lg gap-1 md:gap-3 mt-2">
                                                             {obj.skills.map((skill, index) => {
                                                                 const IconComponent = iconComponents[skill];
                                                                 return IconComponent ? <IconComponent key={index} /> : null;
