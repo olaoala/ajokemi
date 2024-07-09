@@ -6,21 +6,14 @@ import Landing from '../Component/Landing';
 
 import Personals from '../Component/Personal';
 
-import { google } from "calendar-link";
 
-const event = {
-    title: "Schedule a meeting",
-    description: "!",
-    start: "2024-12-29 18:00:00 +0100",
-    duration: [3, "hour"],
-  }; 
- console.log(google(event)) ;
+
 
   const googleUrl ='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3eMcM5BC8Zz71h5pR6CLAWW3jBnNj9i0dGqHPzoMKm_pNJOFn7AFXKI8RWKzGBXDBDvvMXHmTr'
 const Home = () => {
 
     return (
-        <div className='font-playwrite text-white' >
+        <div className='font-playwrite grid' >
       
             <Navbar  />
             <Landing/>

@@ -8,17 +8,10 @@ function App() {
 
   return (
     <Router>
-        
-
-
       <Routes>
       <Route path="/" element={<HelloAnimation />} />
-
       <Route path="/home" element={<Home />} />
-
-        
       </Routes>
-
     </Router>
   );
 }

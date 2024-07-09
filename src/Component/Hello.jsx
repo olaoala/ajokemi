@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import './css/Hello.css';
-
 const languages = ["Hello.", "Hola.", "Bonjour.", "Hallo.", "Ciao."];
 
 const Hello = () => {

@@ -41,8 +41,8 @@ const Work = () => {
     }, {});
 
     return (
-        <div className='px-72 py-5 text-gray-600 min-h-screen'>
-            <div className='container mx-auto '>
+        <div className='px-72 py-5  text-gray-600 min-h-screen'>
+            <div className='container  '>
                 {Object.keys(groupedWorkData).map((type) => (
                     <div key={type} className="mb-8 p-1 shadow-md border border-blue-950 rounded-xl">
                         <div className='flex w-full border rounded-lg bg-blue items-center justify-left mx-auto'>

@@ -73,6 +73,7 @@ const Personals = () => {
   return (
     <div className=''>
       <div className="flex text-gray-700 justify-center gap-4">
+
         <UniversalCard title="Todo" type="list" data={listData} style={{ width: '15em', height: "13em" }} />
         <UniversalCard title="Living by" type="quote" data={quoteData} style={{ width: '10em' }} />
         <UniversalCard title="Hobbies" type="icons" data={iconsData} style={{ width: '15em' }} />
