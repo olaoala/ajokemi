@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import UniversalCard from '../Common/Cards';
 import { IoIosMusicalNotes } from "react-icons/io";
 import { HiOutlinePaintBrush } from "react-icons/hi2";
@@ -22,21 +22,21 @@ import diamonds from '../Assets/diamonds.png';
 import shampoo from '../Assets/shampoo.png';
 import meal from '../Assets/iftar.png';
 import candle from '../Assets/scented-candle.png'
-const fetchLikedSongs = async () => {
-  try {
-    const response = await fetch('http://localhost:3000/likedSongs');
-    console.log(response);
+// const fetchLikedSongs = async () => {
+//   try {
+//     const response = await fetch('http://localhost:3000/likedSongs');
+//     console.log(response);
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Failed to fetch liked songs:', error);
-    return [];
-  }
-};
+//     if (!response.ok) {
+//       throw new Error(`HTTP error! status: ${response.status}`);
+//     }
+//     const data = await response.json();
+//     return data;
+//   } catch (error) {
+//     console.error('Failed to fetch liked songs:', error);
+//     return [];
+//   }
+// };
 
 const Personals = () => {
   // const [spotifyData, setSpotifyData] = useState([]);

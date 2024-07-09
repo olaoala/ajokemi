@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import './css/Hello.css';
@@ -9,6 +9,11 @@ const Hello = () => {
     const [currentLanguage, setCurrentLanguage] = useState(0);
     const navigate = useNavigate();
     const containerRef = useRef(null);
+
+    const navigateToHome = useCallback(() => {
+        navigate('/home');
+    }, [navigate]);
+
 
     useEffect(() => {
         const languageInterval = setInterval(() => {
@@ -26,15 +31,9 @@ const Hello = () => {
         }, 500);
 
         return () => clearInterval(languageInterval);
-    }, []);
+    }, [navigateToHome]);
 
-    const navigateToHome = () => {
-        navigate('/home');
-    };
-    useEffect(() => {
-        navigateToHome();
-      }, [navigateToHome]); 
-
+    
     return (
         <motion.div
             ref={containerRef}
