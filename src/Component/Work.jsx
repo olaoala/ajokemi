@@ -41,7 +41,7 @@ const Work = () => {
     }, {});
 
     return (
-        <div className='sm:px-28 md:px-72 py-5  text-gray-600 min-h-screen'>
+        <div className='px-12 md:px-72 py-5  text-gray-600 min-h-screen'>
             <div className='container  '>
                 {Object.keys(groupedWorkData).map((type) => (
                     <div key={type} className="mb-8 p-1 shadow-md border border-blue-950 rounded-xl">
@@ -56,11 +56,11 @@ const Work = () => {
                                 groupedWorkData[type].map((obj) => (
                                     <div
                                         key={obj.id}
-                                        className='p-6 flex  gap-4 bg-gray-100 hover:bg-grayHover hover:rounded-lg'
+                                        className=' flex   bg-gray-100 hover:bg-grayHover hover:rounded-lg'
                                     >
                                         {obj.type === "Experiences" ? (
                                             <>
-                                                <div className='m-4'>
+                                                <div className=' m-5'>
                                                     <span className='block text-sm font-bold text-gray-500'>{obj.date}</span>
                                                 </div>
                                                 <div className='m-2 flex-1'>

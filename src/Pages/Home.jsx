@@ -13,7 +13,7 @@ import Personals from '../Component/Personal';
 const Home = () => {
 
     return (
-        <div className='font-playwrite grid' >
+        <div className='font-playwrite text-white grid' >
       
             <Navbar  />
             <Landing/>
