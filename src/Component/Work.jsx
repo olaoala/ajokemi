@@ -65,7 +65,7 @@ const Work = () => {
                                                 </div>
                                                 <div className='m-2 flex-1'>
                                                     <h2 className='font-bold text-lg hover:text-gray-950'>{obj.title}</h2>
-                                                    <span className='text-gray-500 hover:text-gray-950'>{obj.description}</span>
+                                                    <p className='text-gray-500 hover:text-gray-950'>{obj.description}</p>
                                                     {obj.skills && (
                                                         <div className="flex text-lg gap-1 md:gap-3 mt-2">
                                                             {obj.skills.map((skill, index) => {
