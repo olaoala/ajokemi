@@ -72,17 +72,13 @@ const Personals = () => {
 
   return (
     <div className=''>
-      <div className="grid  text-gray-700 justify-center gap-4 mx-2 md:flex ">
+      <div className="grid text-gray-700 justify-center gap-4 mx-2 md:flex ">
 
-        <UniversalCard title="Todo" type="list" data={listData} style={{ width: '15em', height: "13em" }} />
-        <UniversalCard title="Living by" type="quote" data={quoteData} style={{ width: '10em' }} />
-        <UniversalCard title="Hobbies" type="icons" data={iconsData} style={{ width: '15em' }} />
+        <UniversalCard  className= 'w-3/4 md:w-60' title="Todo" type="list" data={listData} style={{ height: "13em" }} />
+        <UniversalCard  className= 'w-3/4 md:w-60' title="Living by" type="quote" data={quoteData} />
+        <UniversalCard  className= 'w-3/4 md:w-60'title="Hobbies" type="icons" data={iconsData} />
         <UniversalCard title="Rich Business Woman" type="business" data={businessData} style={{ width: '20em' }} />
       </div>
-      {/* <div className='flex text-gray-700 justify-center m-5 gap-4'>
-        <UniversalCard title="Recent Photos" type="images" data={imagesData} style={{ width: '35em', height: "15em" }} />
-        <UniversalCard title="Can not shut up about these" type="spotify" data={spotifyData} style={{ width: '27em' }} />
-      </div> */}
     </div>
   );
 };

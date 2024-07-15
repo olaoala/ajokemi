@@ -41,7 +41,7 @@ const Work = () => {
     }, {});
 
     return (
-        <div className='px-12 md:px-72 py-5  text-gray-600 min-h-screen'>
+        <div className='px-3 md:px-72 py-5  text-gray-600 min-h-screen'>
             <div className='container  '>
                 {Object.keys(groupedWorkData).map((type) => (
                     <div key={type} className="mb-8 p-1 shadow-md border border-blue-950 rounded-xl">
@@ -60,10 +60,10 @@ const Work = () => {
                                     >
                                         {obj.type === "Experiences" ? (
                                             <>
-                                                <div className=' m-5'>
+                                                <div className='m-2'>
                                                     <span className='block text-sm font-bold text-gray-500'>{obj.date}</span>
                                                 </div>
-                                                <div className='m-2 flex-1'>
+                                                <div className='m-2'>
                                                     <h2 className='font-bold text-lg hover:text-gray-950'>{obj.title}</h2>
                                                     <p className='text-gray-500 hover:text-gray-950'>{obj.description}</p>
                                                     {obj.skills && (

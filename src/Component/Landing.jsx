@@ -9,8 +9,8 @@ function Landing() {
       <main className="flex items-center justify-center w-full h-full">
         <img src={image} alt="Transparent" className="h-full" />
       
-        <div className="absolute top-2/4 transform -translate-y-2/3 w-full flex justify-between">
-          <h2 className="text-4xl text-white p-5">
+        <div className="top-3/4 absolute md:top-2/4 transform -translate-y-2/3 w-full flex justify-between">
+          <h2 className="sm: text-2xl md:text-4xl text-white p-5">
             Front-end <br /> Engineer, Tech babe <br /> extraordinaire.
           </h2>
           <div className="flex items-center bg-blue h-16  text-xl p-3 rounded-l-full hover:w-28 group relative">
@@ -24,11 +24,11 @@ function Landing() {
           </div>
         </div>
 
-        <div className="absolute flex justify-between bottom-20 w-full text-right p-5">
+        <div className="bottom-10 absolute flex justify-between md:bottom-20 w-full text-right p-5">
           <span className="text-blue animate-bounce text-6xl">
             <IoIosArrowRoundDown />
           </span>
-          <h1 className="text-4xl text-white">Babalola Wuraola Ajoke</h1>
+          <h1 className="sm: text-2xl md:text-4xl text-white">Babalola Wuraola Ajoke</h1>
         </div>
       </main>
     </div>
