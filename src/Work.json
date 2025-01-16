@@ -40,28 +40,10 @@
     },
     {
       "id": 6,
-      "title": "Stall57",
-      "description": "This is the third object.",
-      "image": "image.jpg",
-      "link":"https://stall57.netlify.app/",
-      "type":"Projects"
-
-    },
-    {
-      "id": 7,
-      "title": "Calorine",
-      "description": "This is the fourth object.",
-      "image": "imageMe.JPG",
-      "link":"",
-      "type":"Projects"
-
-    },
-    {
-      "id": 8,
-      "title": "Ola Events",
-      "description": "This is the fifth object.",
-      "image": "image.jpg",
-      "link":"https://wura-events-web.netlify.app/",
+      "title": "AyoatiDayo",
+      "description": "Check out Ayo and Dayo's wedding website",
+      "image": "do.png",
+      "link":"https://ponmileatidayo.netlify.app/home",
       "type":"Projects"
 
     }

@@ -75,7 +75,7 @@ const Personals = () => {
       <div className="grid text-gray-700 justify-center gap-4 mx-2 md:flex ">
 
         <UniversalCard  className= 'w-3/4 md:w-60' title="Todo" type="list" data={listData} style={{ height: "13em" }} />
-        <UniversalCard  className= 'w-3/4 md:w-60' title="Living by" type="quote" data={quoteData} />
+        <UniversalCard  className= 'w-3/4 md:w-20' title="Living by" type="quote" data={quoteData} />
         <UniversalCard  className= 'w-3/4 md:w-60'title="Hobbies" type="icons" data={iconsData} />
         <UniversalCard title="Rich Business Woman" type="business" data={businessData} style={{ width: '20em' }} />
       </div>
