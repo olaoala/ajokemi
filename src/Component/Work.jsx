@@ -1,36 +1,30 @@
 import React from 'react';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { motion } from 'framer-motion';
 import workdata from '../Work.json';
-import ProjectCarousel from './Project';
-import { BsSuitcaseLg } from "react-icons/bs";
-import { PiCookingPotBold } from "react-icons/pi";
-import { IoLogoHtml5, IoLogoCss3} from 'react-icons/io';
-import { RiJavascriptFill } from 'react-icons/ri';
-import { PiFileSql } from 'react-icons/pi';
-import { FaGithub, FaReact } from 'react-icons/fa';
-import { RxFigmaLogo } from 'react-icons/rx';
-import { VscJson } from 'react-icons/vsc';
-import { SiAxios, SiReactrouter, SiReacthookform, SiMongodb } from 'react-icons/si';
-import { TbApi } from 'react-icons/tb';
+import Projects from './Project';
+import iconComponents from '../Common/iconMap';
 
-const iconComponents = {
-    IoLogoHtml5: IoLogoHtml5,
-    IoLogoCss3: IoLogoCss3,
-    FaReact: FaReact,
-    RiJavascriptFill: RiJavascriptFill,
-    PiFileSql: PiFileSql,
-    FaGithub: FaGithub,
-    RxFigmaLogo: RxFigmaLogo,
-    VscJson: VscJson,
-    SiAxios: SiAxios,
-    SiReactrouter: SiReactrouter,
-    SiReacthookform: SiReacthookform,
-    SiMongodb: SiMongodb,
-    TbApi: TbApi,
+const sectionVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+};
+
+const listVariants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.12 } }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: 'easeOut' } }
+};
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
 };
 
 const Work = () => {
-  
 
     const groupedWorkData = workdata.reduce((acc, item) => {
         if (!acc[item.type]) {
@@ -41,47 +35,69 @@ const Work = () => {
     }, {});
 
     return (
-        <div className='px-3 md:px-72 py-5  text-gray-600 min-h-screen'>
-            <div className='container  '>
+        <div id="work" className='bg-gray-50 py-12 text-gray-600'>
+            <div className='container px-6 md:px-12 max-w-5xl mx-auto'>
                 {Object.keys(groupedWorkData).map((type) => (
-                    <div key={type} className="mb-8 p-1 shadow-md border border-blue-950 rounded-xl">
-                        <div className='flex w-full border rounded-lg bg-blue items-center justify-left mx-auto'>
-                            <h3 className='text-white flex p-4 text-2xl font-bold'>{type}{
-                                type === "Experiences" ? <BsSuitcaseLg className='my-2 mx-3 text-lg' /> : <PiCookingPotBold className='m-2 mx-3 text-lg' />}</h3>
-                        </div>
-                        <div className={type === "Certifications" ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4" : "grid grid-cols-1 gap-2"}>
-                            {type === "Projects" ? (
-                                <ProjectCarousel />
-                            ) : (
-                                groupedWorkData[type].map((obj) => (
-                                    <div
+                    <motion.div
+                        key={type}
+                        className="mb-14"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.15 }}
+                        variants={sectionVariants}
+                    >
+                        <h3 className='font-bold text-2xl text-gray-800 mb-6'>{type}</h3>
+
+                        {type === "Projects" && <Projects />}
+
+                        {type === "Experiences" && (
+                            <motion.div
+                                className="border-l-2 border-gray-300 flex flex-col gap-8 pl-6"
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0.15 }}
+                                variants={listVariants}
+                            >
+                                {groupedWorkData[type].map((obj) => (
+                                    <motion.div key={obj.id} variants={itemVariants} className="relative">
+                                        <span className="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-blue" />
+                                        <span className='block text-xs font-bold text-gray-400 mb-1'>{obj.date}</span>
+                                        <h2 className='font-bold text-lg text-gray-800'>{obj.title}</h2>
+                                        <p className='text-gray-500 mt-1'>{obj.description}</p>
+                                        {obj.skills && (
+                                            <div className="flex text-lg gap-2 md:gap-3 mt-3">
+                                                {obj.skills.map((skill, index) => {
+                                                    const IconComponent = iconComponents[skill];
+                                                    return IconComponent ? <IconComponent key={index} /> : null;
+                                                })}
+                                            </div>
+                                        )}
+                                    </motion.div>
+                                ))}
+                            </motion.div>
+                        )}
+
+                        {type !== "Projects" && type !== "Experiences" && (
+                            <motion.div
+                                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0.15 }}
+                                variants={listVariants}
+                            >
+                                {groupedWorkData[type].map((obj) => (
+                                    <motion.div
                                         key={obj.id}
-                                        className=' flex   bg-gray-100 hover:bg-grayHover hover:rounded-lg'
+                                        variants={cardVariants}
+                                        className="bg-white border border-gray-200 rounded-lg p-4"
                                     >
-                                        {obj.type === "Experiences" ? (
-                                            <>
-                                                <div className='m-2'>
-                                                    <span className='block text-sm font-bold text-gray-500'>{obj.date}</span>
-                                                </div>
-                                                <div className='m-2'>
-                                                    <h2 className='font-bold text-lg hover:text-gray-950'>{obj.title}</h2>
-                                                    <p className='text-gray-500 hover:text-gray-950'>{obj.description}</p>
-                                                    {obj.skills && (
-                                                        <div className="flex text-lg gap-1 md:gap-3 mt-2">
-                                                            {obj.skills.map((skill, index) => {
-                                                                const IconComponent = iconComponents[skill];
-                                                                return IconComponent ? <IconComponent key={index} /> : null;
-                                                            })}
-                                                        </div>
-                                                    )}
-                                                </div>
-                                            </>
-                                        ) : null}
-                                    </div>
-                                ))
-                            )}
-                        </div>
-                    </div>
+                                        <h2 className='font-bold text-base text-gray-800'>{obj.title}</h2>
+                                        {obj.description && <p className='text-gray-500 text-sm mt-1'>{obj.description}</p>}
+                                    </motion.div>
+                                ))}
+                            </motion.div>
+                        )}
+                    </motion.div>
                 ))}
             </div>
         </div>

@@ -1,36 +1,93 @@
-import React from 'react';
-import image from '../Assets/image.png';
-import { CiGlobe } from "react-icons/ci";
-import { IoIosArrowRoundDown } from "react-icons/io";
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { IoLocationOutline } from "react-icons/io5";
+import photo from '../Assets/image.png';
+
+const phrases = [
+  "I build fast, responsive web apps that turn visitors into customers",
+  "I build full-stack products that just work",
+  "I turn ideas into fast, reliable web experiences",
+  "I build interfaces that make people want to hit \"buy\"",
+];
+
+const TYPING_SPEED = 45;
+const DELETING_SPEED = 25;
+const PAUSE_TIME = 1800;
+
+function useTypewriter(words) {
+  const [text, setText] = useState('');
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentWord = words[wordIndex];
+    let timeout;
+
+    if (!isDeleting && text === currentWord) {
+      timeout = setTimeout(() => setIsDeleting(true), PAUSE_TIME);
+    } else if (isDeleting && text === '') {
+      setIsDeleting(false);
+      setWordIndex((prev) => (prev + 1) % words.length);
+    } else {
+      const next = isDeleting
+        ? currentWord.substring(0, text.length - 1)
+        : currentWord.substring(0, text.length + 1);
+      timeout = setTimeout(() => setText(next), isDeleting ? DELETING_SPEED : TYPING_SPEED);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [text, isDeleting, wordIndex, words]);
+
+  return text;
+}
 
 function Landing() {
-  return (
-    <div className="bg-gray relative h-screen bg-blue-500">
-      <main className="flex items-center justify-center w-full h-full">
-        <img src={image} alt="Transparent" className="h-full" />
-      
-        <div className="top-3/4 absolute md:top-2/4 transform -translate-y-2/3 w-full flex justify-between">
-          <h2 className="sm: text-2xl md:text-4xl text-white p-5">
-            Front-end <br /> Engineer, Tech babe <br /> extraordinaire.
-          </h2>
-          <div className="flex items-center bg-blue h-16  text-xl p-3 rounded-l-full hover:w-28 group relative">
-            <span className="">
-              <CiGlobe />
-            </span>
-            <p className="text-sm m-2 hidden group-hover:block">Lagos, Nigeria</p>
-            <div className="absolute right-4 bottom-full mb-2 w-max max-w-xs -translate-x-1/2 text-sm text-white bg-gray-700 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              Italy, soon!
-            </div>
-          </div>
-        </div>
+  const typedText = useTypewriter(phrases);
 
-        <div className="bottom-10 absolute flex justify-between md:bottom-20 w-full text-right p-5">
-          <span className="text-blue animate-bounce text-6xl">
-            <IoIosArrowRoundDown />
+  return (
+    <div className="bg-blue relative min-h-[55vh] flex items-center justify-center text-center px-6 py-10 md:py-14">
+      <div className="max-w-2xl flex flex-col items-center">
+        <motion.img
+          src={photo}
+          alt="Babalola Wuraola Ajoke"
+          className="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover object-top bg-white border-2 border-white/20 mb-4"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+        />
+
+        <motion.p
+          className="text-muted text-sm md:text-base mb-3"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
+        >
+          Full-stack engineer, tech babe extraordinaire.
+        </motion.p>
+
+        <motion.h1
+          className="text-white text-xl md:text-3xl font-medium leading-snug mb-4 min-h-[4.5rem] md:min-h-[5.5rem] flex items-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
+        >
+          <span className="sr-only">{phrases[0]}</span>
+          <span aria-hidden="true">
+            {typedText}
+            <span className="inline-block w-[2px] h-[1em] bg-white ml-1 align-middle animate-pulse" />
           </span>
-          <h1 className="sm: text-2xl md:text-4xl text-white">Babalola Wuraola Ajoke</h1>
-        </div>
-      </main>
+        </motion.h1>
+
+        <motion.div
+          className="inline-flex items-center gap-2 bg-blue border border-white/20 text-muted text-xs tracking-wide px-4 py-2 rounded-full"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.45, ease: 'easeOut' }}
+        >
+          <IoLocationOutline className="text-base" />
+          <span>LAGOS, NIGERIA</span>
+        </motion.div>
+      </div>
     </div>
   );
 }

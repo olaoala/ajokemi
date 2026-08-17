@@ -18,16 +18,21 @@ module.exports = {
       },
       backgroundColor:{
         blue: '#111B37' ,
+        navyDark: '#0D1526',
+        accent: '#378ADD',
+        accentTint: '#E6F1FB',
         gray: '#ABB2B9',
         grayHover: '#EBEDEF',
         graybg:'#C0C0C0',
         hover: ' rgba(255, 255, 255, 0.055)',
         graya:"#F8F9F9",
-        angray:"#ebedef;"
+        angray:"#ebedef"
       },
       textColor:{
         blue: '#111B37' ,
-
+        accentOn: '#042C53',
+        accentTint: '#0C447C',
+        muted: '#B5D4F4',
       },
       boxShadow: {
         'custom': ' radial-gradient(circle, rgba(17,27,55,0.2359068627450981) 15%, rgba(162,173,204,0.31994047619047616) 50%, rgba(17,27,55,1) 87%)',
