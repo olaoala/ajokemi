@@ -35,7 +35,7 @@ const Hello = () => {
         }, 500);
 
         return () => clearInterval(languageInterval);
-    }, [navigateToHome, skipped]);
+    }, [navigateToHome, skipped, alreadySeenIntro]);
 
     const handleSkip = () => {
         setSkipped(true);
